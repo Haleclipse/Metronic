@@ -1,0 +1,64 @@
+//
+// Root
+//
+
+// Light mode
+@include theme-light() {
+    // Page bg
+    --kt-page-bg: #{$page-bg};
+
+    // Header
+    --kt-header-desktop-default-border: #{get($header-config, desktop, default, border)};
+    --kt-header-desktop-fixed-bg-color: #{get($header-config, desktop, fixed, bg-color)};
+    --kt-header-desktop-fixed-box-shadow: #{get($header-config, desktop, fixed, box-shadow)};
+
+    // Topbar
+    --kt-topbar-btn-icon-color: #{get($topbar-config, btn, icon-color)};
+    --kt-topbar-btn-icon-color-active: #{get($topbar-config, btn, icon-color-active)};
+    --kt-topbar-btn-bg-color: #{get($topbar-config, btn, bg-color)};
+    --kt-topbar-btn-bg-color-active: #{get($topbar-config, btn, bg-color-active)};
+
+    // Aside
+    --kt-aside-bg-color: #{get($aside-config, bg-color)};
+    --kt-aside-box-shadow: #{get($aside-config, box-shadow)};
+    --kt-aside-menu-icon-bg-color: #{get($aside-config, menu-icon, bg-color)};
+    --kt-aside-menu-icon-bg-color-active: #{get($aside-config, menu-icon, bg-color-active)};
+    --kt-aside-menu-icon-icon-color: #{get($aside-config, menu-icon, icon-color)};
+    --kt-aside-menu-icon-icon-color-active: #{get($aside-config, menu-icon, icon-color-active)};
+    --kt-aside-menu-icon-icon-color-hover: #{get($aside-config, menu-icon, icon-color-hover)};
+
+    // Main
+    --kt-btn-nav-border-color: #FFEB39;
+    --kt-btn-nav-bg-color: #EFD600;
+}
+
+// Dark mode
+@include theme-dark() {
+    // Page bg
+    --kt-page-bg: #{$page-bg-dark};
+
+    // Header
+    --kt-header-desktop-default-border: #{get($header-config, desktop, default, border-dark)};
+    --kt-header-desktop-fixed-bg-color: #{get($header-config, desktop, fixed, bg-color-dark)};
+    --kt-header-desktop-fixed-box-shadow: #{get($header-config, desktop, fixed, box-shadow-dark)};
+
+    // Topbar
+    --kt-topbar-btn-icon-color: #{get($topbar-config, btn, icon-color-dark)};
+    --kt-topbar-btn-icon-color-active: #{get($topbar-config, btn, icon-color-active-dark)};
+    --kt-topbar-btn-bg-color: #{get($topbar-config, btn, bg-color-dark)};
+    --kt-topbar-btn-bg-color-active: #{get($topbar-config, btn, bg-color-active-dark)};   
+
+    // Aside
+    --kt-aside-bg-color: #{get($aside-config, bg-color-dark)};
+    --kt-aside-box-shadow: #{get($aside-config, box-shadow-dark)};
+    --kt-aside-menu-icon-bg-color: #{get($aside-config, menu-icon, bg-color-dark)};
+    --kt-aside-menu-icon-bg-color-active: #{get($aside-config, menu-icon, bg-color-active-dark)};
+    --kt-aside-menu-icon-icon-color: #{get($aside-config, menu-icon, icon-color-dark)};
+    --kt-aside-menu-icon-icon-color-active: #{get($aside-config, menu-icon, icon-color-active-dark)};
+    --kt-aside-menu-icon-icon-color-hover: #{get($aside-config, menu-icon, icon-color-hover-dark)};
+    
+
+    // Main
+    --kt-btn-nav-border-color: $gray-100-dark;
+    --kt-btn-nav-bg-color: $gray-100-dark;
+}

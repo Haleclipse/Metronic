@@ -1,0 +1,64 @@
+//
+// Header
+//
+
+// Tabs
+.header-tabs {
+	.nav {
+		.nav-link {
+			border-bottom: 1px solid var(--kt-header-navs-tab-border-color);
+			border-left: 1px solid var(--kt-header-navs-tab-border-color);
+			background-color: var(--kt-header-navs-tab-bg-color);
+			@include border-radius(0);
+
+			&.active {
+				background-color: var(--kt-content-bg); 
+				border-bottom: 1px solid var(--kt-content-bg);	
+				border-left: 1px solid var(--kt-content-bg);	
+			}
+		}
+
+		.nav-item:first-child {
+			.nav-link {
+				border-left: 0;
+				@include border-top-start-radius($border-radius);
+			}
+		}
+
+		.nav-item:last-child {
+			.nav-link {
+				@include border-top-end-radius($border-radius);
+			}
+		}
+	}
+}
+
+// Navs
+.header-navs {
+	background-color: var(--kt-content-bg);
+}
+
+// Desktop mode
+@include media-breakpoint-up(lg) {
+	// Navs
+	.header-navs {
+		border-bottom: 1px solid var(--kt-border-color);
+		padding-left: get($content-spacing, desktop);
+		padding-right: get($content-spacing, desktop);
+
+		// Header menu enabled and tabs disabled
+		.header-menu-enabled:not(.header-tabs-enabled) & {
+			@include border-top-radius($border-radius);
+		}
+	}
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+	// Reset container
+	[data-kt-drawer-name="header-menu"] {
+		.container-custom {
+			padding: 0 !important;
+		}
+	}
+}

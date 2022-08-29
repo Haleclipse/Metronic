@@ -1,0 +1,53 @@
+//
+// Root
+//
+
+// Light mode
+@include theme-light() {
+    // Page bg
+    --kt-page-bg: #{$page-bg};
+
+    // Header   
+    --kt-header-link-bg-color: #{get($header-config, link-bg-color)};  
+ 
+    // Content
+    --kt-content-bg: #{$content-bg};
+
+    // Background image
+    --kt-page-bg-image: #{$page-bg-image};
+
+    // Toolbar
+    --kt-toolbar-bg-color: #{get($toolbar-config, bg-color)};     
+
+    // Topbar
+    --kt-topbar-btn-bg-color: #{get($topbar-config, btn-bg-color)};
+    --kt-topbar-btn-bg-color-active: #{get($topbar-config, btn-bg-color-active)};
+}
+
+// Dark mode
+@include theme-dark() {
+    // Page bg
+    --kt-page-bg: #{$page-bg-dark};    
+    
+     // Header     
+     --kt-header-link-bg-color: #{get($header-config, link-bg-color-dark)};
+    
+    // Content
+    --kt-content-bg: #{$content-bg-dark};
+
+    // Background image
+    --kt-page-bg-image: #{$page-bg-image-dark};
+
+    // Toolbar
+    --kt-toolbar-bg-color: #{get($toolbar-config, bg-color-dark)};
+
+    // Topbar
+    --kt-topbar-btn-bg-color: #{get($topbar-config, btn-bg-color-dark)};
+    --kt-topbar-btn-bg-color-active: #{get($topbar-config, btn-bg-color-active-dark)};
+}
+
+
+ 
+    
+    
+     

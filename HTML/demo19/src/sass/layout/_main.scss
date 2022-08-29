@@ -1,0 +1,57 @@
+//
+// Main
+//
+
+// Body
+body {
+	background-color: var(--kt-page-bg);
+	background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+	
+	&:not(.bg-body) {
+		background-image: var(--kt-page-bg-image);
+	} 
+}
+
+// Font color from Content background color
+.text-page-bg {
+	color: $page-bg;
+}
+
+// Desktop Mode
+@include media-breakpoint-up(lg) {
+	// Containers
+	.container,
+	.container-xxl,
+	.container-fluid {
+		padding: 0 get($content-spacing, desktop) !important;
+	}
+
+	// Wrapper
+	.wrapper {
+		// Fixed header mode
+		.header-fixed[data-kt-sticky-header="on"] & {
+			padding-top: get($header-config, height, desktop) !important;
+		}
+	}
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+	// Containers
+	.container,
+	.container-xxl,
+	.container-fluid {
+		max-width: none;
+		padding: 0 get($content-spacing, tablet-and-mobile) !important;
+	}
+
+	// Wrapper
+	.wrapper {
+		// Fixed header mode
+		.header-tablet-and-mobile-fixed[data-kt-sticky-header="on"] & {
+			padding-top: get($header-config, height, tablet-and-mobile) !important;
+		}
+	}
+}

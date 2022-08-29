@@ -1,0 +1,216 @@
+//
+// Header
+//
+
+
+.header {
+	.header-menu-container {
+		background-color: var(--kt-header-menu-bg-color);
+	}
+
+	// Custom button
+	.btn.btn-nav {
+		@include button-custom-variant(
+			$color: var(--kt-header-btn-nav-color), 
+			$icon-color: var(--kt-header-btn-nav-icon-color), 
+			$border-color: var(--kt-header-btn-nav-border-color), 
+			$bg-color: transparent, 
+			$color-active: var(--kt-white), 
+			$icon-color-active: var(--kt-white), 
+			$border-color-active: var(--kt-header-btn-nav-border-color-active), 
+			$bg-color-active: var(--kt-header-btn-nav-bg-color-active)
+		);
+	}
+
+	.btn-create {
+		@include button-custom-variant(
+			$color: var(--kt-gray-600), 
+			$icon-color: var(--kt-header-btn-create-icon-color), 
+			$border-color: var(--kt-header-btn-create-border-color), 
+			$bg-color: var(--kt-header-btn-create-bg-color), 
+			$color-active: null, $icon-color-active: null, $border-color-active: null, $bg-color-active: null
+		);
+	}
+
+	// Header menu
+	.header-menu {
+		.menu {
+			// Root links
+			& > .menu-item {
+				// Customize menu link default state       
+				@include menu-link-default-state( 
+					$title-color: var(--kt-header-menu-link-color), 
+					$icon-color:  var(--kt-header-menu-link-color), 
+					$bullet-color:  var(--kt-header-menu-link-color), 
+					$arrow-color:  var(--kt-header-menu-link-color), 
+					$bg-color: null, 
+					$all-links: false
+				);
+
+				// Customize menu link hover state       
+				@include menu-link-hover-state( 
+					$title-color: var(--kt-primary), 
+					$icon-color:  var(--kt-header-menu-link-active-color), 
+					$bullet-color:  var(--kt-header-menu-link-active-color), 
+					$arrow-color:  var(--kt-header-menu-link-active-color), 
+					$bg-color: var(--kt-header-menu-link-active-bg-color), 
+					$all-links: false
+				);
+
+				// Customize menu link here state       
+				@include menu-link-here-state( 
+					$title-color:  var(--kt-header-menu-link-color), 
+					$icon-color:  var(--kt-header-menu-link-active-color), 
+					$bullet-color:  var(--kt-header-menu-link-active-color), 
+					$arrow-color:  var(--kt-header-menu-link-active-color), 
+					$bg-color:  var(--kt-header-menu-link-active-bg-color), 
+					$all-links: false
+				);
+
+				// Customize menu link show state       
+				@include menu-link-show-state( 
+					$title-color:  var(--kt-header-menu-link-color), 
+					$icon-color:  var(--kt-header-menu-link-active-color), 
+					$bullet-color:  var(--kt-header-menu-link-active-color), 
+					$arrow-color:  var(--kt-header-menu-link-active-color), 
+					$bg-color:  var(--kt-header-menu-link-active-bg-color), 
+					$all-links: false
+				);
+
+				// Customize menu link active state       
+				@include menu-link-active-state( 
+					$title-color:  var(--kt-header-menu-link-active-color), 
+					$icon-color:  var(--kt-header-menu-link-active-color), 
+					$bullet-color:  var(--kt-header-menu-link-active-color), 
+					$arrow-color:  var(--kt-header-menu-link-active-color), 
+					$bg-color:  var(--kt-header-menu-link-active-bg-color), 
+					$all-links: false
+				);
+			}
+		}
+	}
+}
+
+// Desktop mode
+@include media-breakpoint-up(lg) {
+	.header {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		flex-direction: column;
+		height: get($header-config, height, desktop);
+		transition: left get($aside-config, transition-speed) ease;
+		background-color: var(--kt-header-bg-color);
+
+		// Header Logo
+		.header-logo {
+			padding: 0;
+			display: flex;
+			align-items: center;		 
+
+			// Logos
+			.logo-default {
+				display: inline-block;
+			}
+
+			.logo-sticky {
+				display: none;
+			}
+		}		
+		
+		// Header menu
+		.header-menu {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+		}		
+
+		// Header search
+		.header-search {
+			form {
+				.svg-icon {
+					color: var(--kt-white);
+				}
+
+				.form-control {
+					color: var(--kt-white);
+					border: 1px solid var(--kt-header-form-control-color);
+					@include placeholder(var(--kt-header-placeholder-color));
+				}
+			}
+		}
+
+		// Header menu container
+		.separator {
+			width: 100%;
+		}
+
+		// Fixed header & sticky header modes
+		.header-fixed[data-kt-sticky-header="on"] & {
+			position: fixed;
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: get($header-config, z-index);
+			box-shadow: var(--kt-header-box-shadow);
+			height: get($header-config, sticky-height);			
+			padding: 0;			
+
+			.separator,
+			.header-menu-container {
+				display: none !important;
+			}
+		}
+	}
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+	// Header
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: stretch;
+		height: get($header-config, height, tablet-and-mobile);
+		position: relative;
+		z-index: 3;
+		background-color: get($header-config, bg-color);	
+	
+		.separator,
+		.header-menu-container {
+			display: none !important;
+		}
+
+		// Fixed header and header sticky modes
+		.header-tablet-and-mobile-fixed[data-kt-sticky-header="on"] & {
+			position: fixed;
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: get($header-config, z-index);
+			height: get($header-config, height, tablet-and-mobile);
+			box-shadow: var(--kt-header-box-shadow);
+
+			// Header Logo
+			.header-logo {
+				// Logos
+				.logo-default {
+					display: none;
+				}
+
+				.logo-sticky {
+					display: inline-block;
+				}
+			}	
+		}	
+	} 	
+
+	// Header menu
+	.header-menu {
+		display: none;
+		z-index: get($header-config, z-index) - 1;
+		padding: 0 !important;
+	}
+}

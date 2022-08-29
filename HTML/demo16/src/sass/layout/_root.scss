@@ -1,0 +1,53 @@
+//
+// Root
+//
+
+// Light mode
+@include theme-light() {
+    // Page bg
+    --kt-page-bg: #{$page-bg};
+
+    // Header   
+    --kt-header-bg-color: #{get($header-config, bg-color)};  
+    --kt-header-menu-bg-color: #{get($header-config, menu-bg-color)};  
+    --kt-header-menu-link-color: #{get($header-config, menu-link-color)};  
+    --kt-header-menu-link-active-color: #{get($header-config, menu-link-active-color)};  
+    --kt-header-menu-link-active-bg-color: #{get($header-config, menu-link-active-bg-color)};
+    --kt-header-btn-nav-color: #{get($header-config, btn-nav-color)};  
+    --kt-header-btn-nav-icon-color: #{get($header-config, btn-nav-icon-color)};
+    --kt-header-btn-nav-border-color: #{get($header-config, btn-nav-border-color)};
+    --kt-header-btn-nav-border-color-active: #{get($header-config, btn-nav-border-color-active)};
+    --kt-header-btn-nav-bg-color-active: #{get($header-config, btn-nav-bg-color-active)};     
+    --kt-header-btn-create-bg-color: #{get($header-config, btn-create-bg-color)};
+    --kt-header-btn-create-border-color: #{get($header-config, btn-create-border-color)};
+    --kt-header-btn-create-icon-color: #{get($header-config, btn-create-icon-color)};
+    --kt-header-search-color: #{get($header-config, bg-color)};
+    --kt-header-form-control-color: #{get($header-config, form-control-color)};
+    --kt-header-placeholder-color: #{get($header-config, placeholder-color)};
+    --kt-header-box-shadow: #{get($header-config, box-shadow)}; 
+}
+
+// Dark mode
+@include theme-dark() {
+    // Page bg
+    --kt-page-bg: #{$page-bg-dark};
+
+    // Header   
+    --kt-header-bg-color: #{get($header-config, bg-color-dark)};  
+    --kt-header-menu-bg-color: #{get($header-config, menu-bg-color-dark)};  
+    --kt-header-menu-link-color: #{get($header-config, menu-link-color-dark)};  
+    --kt-header-menu-link-active-color: #{get($header-config, menu-link-active-color-dark)};  
+    --kt-header-menu-link-active-bg-color: #{get($header-config, menu-link-active-bg-color-dark)};
+    --kt-header-btn-nav-color: #{get($header-config, btn-nav-color-dark)};  
+    --kt-header-btn-nav-icon-color: #{get($header-config, btn-nav-icon-color-dark)};
+    --kt-header-btn-nav-border-color: #{get($header-config, btn-nav-border-color-dark)};
+    --kt-header-btn-nav-border-color-active: #{get($header-config, btn-nav-border-color-active-dark)};
+    --kt-header-btn-nav-bg-color-active: #{get($header-config, btn-nav-bg-color-active-dark)};
+    --kt-header-btn-create-bg-color: #{get($header-config, btn-create-bg-color-dark)};
+    --kt-header-btn-create-icon-color: #{get($header-config, btn-create-icon-color-dark)};
+    --kt-header-btn-create-border-color: #{get($header-config, btn-create-border-color-dark)};
+    --kt-header-search-color: #{get($header-config, bg-color-dark)};
+    --kt-header-form-control-color: #{get($header-config, form-control-color-dark)};
+    --kt-header-placeholder-color: #{get($header-config, placeholder-color-dark)};
+    --kt-header-box-shadow: #{get($header-config, box-shadow-dark)};
+}

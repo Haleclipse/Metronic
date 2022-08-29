@@ -1,0 +1,78 @@
+//
+// Topbar
+//
+
+ 
+$btn-size-default: 35px;
+$btn-size-lg: 40px;
+
+// Buttons
+.topbar {		
+	// Buttons
+	.btn.btn-custom {
+		width: $btn-size-lg;
+		height: $btn-size-lg;
+
+		@include button-custom-variant(
+			$color: null, $icon-color: var(--kt-topbar-btn-color), $border-color: null, $bg-color: var(--kt-topbar-btn-bg-color), 
+			$color-active: null, $icon-color-active: var(--kt-primary), $border-color-active: null, $bg-color-active: null
+		);
+	}
+	
+	// Fixed header & NON sticky search modes
+	.active.show > .btn.btn-custom {
+		color: var(--kt-primary);
+		background-color: var(--kt-topbar-btn-bg-color);
+
+		i,
+		.svg-icon {
+			color: var(--kt-primary);
+		}
+	}   
+}
+
+// Search
+.topbar-search {
+	form {
+		.search-input {
+			height: $btn-size-lg;
+			@include placeholder(rgba(var(--kt-topbar-btn-color), 0.75));
+			background-color: var(--kt-topbar-btn-bg-color);
+			border: 1px solid var(--kt-topbar-btn-bg-color);
+			color: var(--kt-topbar-btn-color);
+
+			&:focus {
+				background-color: var(--kt-topbar-btn-bg-color);
+				border: 1px solid var(--kt-topbar-btn-bg-color);
+				color: var(--kt-topbar-btn-color);
+			}
+		}
+
+		i,
+		.svg-icon,
+		.spinner-border {
+			color: var(--kt-topbar-btn-color) !important;
+		}
+	}
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+	// Buttons
+	.topbar {		
+		// Buttons
+		.btn.btn-custom {
+			width: $btn-size-default;
+			height: $btn-size-default;
+		}
+	}
+
+	// Search
+	.topbar-search {
+		form {
+			.search-input {
+				height: $btn-size-default;
+			}
+		}
+	}
+}

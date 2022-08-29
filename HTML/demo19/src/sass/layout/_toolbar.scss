@@ -1,0 +1,20 @@
+//
+// Toolbar
+//
+
+// General
+.toolbar {
+    display: flex;
+    align-items: center;
+    background-color: var(--kt-toolbar-bg-color);
+    @include border-top-end-radius($border-radius);
+    padding: 0 get($content-spacing, desktop);
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+	.toolbar {
+		padding: get($content-spacing, tablet-and-mobile);
+        @include border-top-start-radius($border-radius);
+	}
+}

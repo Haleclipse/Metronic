@@ -1,0 +1,109 @@
+//
+// Header Customization
+//
+
+// Desktop mode
+@include media-breakpoint-up(lg) {
+    .header-menu {
+        .menu {
+            align-items: stretch;
+            
+            > .menu-item {
+                align-items: stretch;
+                flex-grow: 1;
+                flex-basis: 0;
+                margin-right: 1.5rem !important;
+
+                > .menu-link {
+                    padding-left: 0 !important;
+                    border-right: 2px solid var(--kt-gray-100);
+                    background-color: transparent !important;
+                    border-radius: 0 !important;
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+
+                    .menu-title {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+
+                        .menu-text {
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: var(--kt-gray-800);
+                            margin-bottom: 0.15rem;
+                        }
+
+                        .menu-desc {
+                            font-size: 1rem;
+                            font-weight: 500;
+                            color: var(--kt-gray-500);
+                        }
+                    }
+                }
+
+                &:last-child {
+                    > .menu-link {
+                        border-right: 0 !important;
+                        margin-right: 0;
+                    }
+                }  
+
+                // Menu link states
+                @include menu-link-hover($all-links: false) {
+                    .menu-text {
+                        color: var(--kt-primary);    
+                    }
+                }
+
+                @include menu-link-active($all-links: false) {
+                    .menu-text {
+                        color: var(--kt-primary);    
+                    }
+                }
+
+                @include menu-link-show($all-links: false) {
+                    .menu-text {
+                        color: var(--kt-primary);    
+                    }
+                }
+
+                @include menu-link-here($all-links: false) {
+                    .menu-text {
+                        color: var(--kt-primary);    
+                    }
+                }                
+            }
+        }        
+    }
+
+    .header-search {
+        form {
+            > .form-control {
+                border: 0 !important;
+                background-color: rgba($white, 0.1) !important;
+                color: $white;
+
+                @include placeholder(rgba($white, 0.75));
+            }    
+
+            .spinner-border,
+            .svg-icon {
+                color: $white !important;    
+            }
+        }    
+    }
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+    .header-menu {
+        .menu-link {
+            .menu-title {
+                .menu-desc {
+                    display: none;
+                }
+            }
+        }
+    }
+}

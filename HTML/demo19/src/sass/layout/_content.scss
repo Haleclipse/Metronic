@@ -1,0 +1,29 @@
+//
+// Content
+//
+
+// Content container
+.content {
+	background-color: var(--kt-content-bg);
+	@include border-bottom-radius($border-radius);
+}
+
+// Desktop mode
+@include media-breakpoint-up(lg) {
+	.content {
+		padding: get($content-spacing, desktop);
+
+		// Aside enabled
+		.aside-enabled & {			
+			padding-left: get($content-spacing, desktop);
+			@include border-bottom-start-radius(0);
+		}
+	}
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+	.content {
+		padding: get($content-spacing, tablet-and-mobile);
+	}
+}

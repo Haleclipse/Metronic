@@ -1,0 +1,16 @@
+//
+// Topbar
+//
+
+.btn-topbar {
+	@include button-custom-variant(
+		$color: null,
+		$icon-color: var(--kt-topbar-btn-icon-color),
+		$border-color: null,
+		$bg-color: var(--kt-topbar-btn-bg-color),
+		$color-active: var(--kt-topbar-btn-icon-color-active),
+		$icon-color-active: null,
+		$border-color-active: null,
+		$bg-color-active: var(--kt-topbar-btn-bg-color-active),
+	)
+}

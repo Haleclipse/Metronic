@@ -1,0 +1,34 @@
+//
+// Aside Default
+//
+
+// General mode(all devices)
+.aside {
+	display: flex;
+	flex-shrink: 0;
+	flex-direction: column;
+	padding: 0;
+	background-color: get($aside-config, bg-color);
+}
+
+// Desktop mode
+@include media-breakpoint-up(lg) {
+	.aside {
+		width: get($aside-config, width);
+		@include border-bottom-start-radius($border-radius);
+
+		// Aside menu
+		.aside-menu {
+			width: get($aside-config, width); 
+		}	
+	}
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+	.aside {		
+		//box-shadow: get($aside-config, box-shadow);
+		border-radius: 0;
+		display: none;
+	}
+}

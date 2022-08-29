@@ -1,0 +1,172 @@
+//
+// Header
+//
+
+// Desktop mode
+@include media-breakpoint-up(lg) {
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: stretch;
+		height: get($header-config, desktop, default, height);
+		transition: left get($aside-config, transition-speed) ease;
+
+		// Header Logo
+		.header-logo {
+			padding: 0;
+			display: flex;
+			align-items: center;		 
+
+			// Logos
+			.logo-default {
+				display: inline-block;
+			}
+
+			.logo-sticky {
+				display: none;
+			}
+		}		
+		
+		// Header menu
+		.header-menu {
+			display: flex;
+
+			.menu {
+				// Root links
+				& > .menu-item {
+
+					// Customize menu link default state       
+					@include menu-link-default-state( $title-color: var(--kt-gray-600), $icon-color: var(--kt-gray-500), $bullet-color: var(--kt-gray-500), $arrow-color: var(--kt-gray-500), $bg-color: null, $all-links: false);
+
+					// Customize menu link hover state       
+					@include menu-link-hover-state( $title-color: var(--kt-gray-800), $icon-color: var(--kt-gray-700), $bullet-color: var(--kt-gray-700), $arrow-color:  var(--kt-gray-700), $bg-color: transparent, $all-links: false);
+
+					// Customize menu link here state       
+					@include menu-link-here-state( $title-color: var(--kt-gray-800), $icon-color: var(--kt-gray-700), $bullet-color: var(--kt-gray-700), $arrow-color:  var(--kt-gray-700), $bg-color: transparent, $all-links: false);
+
+					// Customize menu link show state       
+					@include menu-link-show-state( $title-color: var(--kt-gray-800), $icon-color: var(--kt-gray-700), $bullet-color: var(--kt-gray-700), $arrow-color: var(--kt-gray-700), $bg-color: transparent, $all-links: false);
+
+					// Customize menu link active state       
+					@include menu-link-active-state( $title-color: var(--kt-gray-800), $icon-color: var(--kt-gray-700), $bullet-color: var(--kt-gray-700), $arrow-color: var(--kt-gray-700), $bg-color: transparent, $all-links: false);
+
+					& > .menu-link {
+						padding: 0;
+						margin-right: 1.75rem;
+
+						.menu-title {
+							font-size: 1.1rem;
+							font-weight: $font-weight-bold;							
+						}
+					}
+
+					// States
+					&.here > .menu-link,
+					& > .menu-link.active {
+						position: relative;
+						
+						&:after {
+							position: absolute;
+							left: 0;
+							width: 30px;
+							height: 3px;
+							bottom: 3px;
+							display: block;
+							content: " ";
+							background-color: var(--kt-gray-800);
+							@include border-radius(6px);
+						}
+					}
+				}
+			}
+		}		
+
+		// Fixed header & sticky header modes
+		.header-fixed[data-kt-sticky-header="on"] & {
+			position: fixed;
+			top: 0;
+			right:0;
+			left: 0;
+			z-index: get($header-config, desktop, fixed, z-index);
+			height: get($header-config, desktop, fixed, height);
+			padding: 0;
+
+			// Header Logo
+			.header-logo {
+				// Logos
+				.logo-default {
+					display: none;
+				}
+
+				.logo-sticky {
+					display: inline-block;
+				}
+			}				
+
+			// Container 
+			.header-container {				
+				background-color: var(--kt-header-desktop-fixed-bg-color);
+				box-shadow: var(--kt-eader-desktop-fixed-box-shadow);
+				@include border-bottom-radius(get($aside-config, border-radius));
+			}
+		}
+
+		// Fixed header, sticky header and aside enabled modes
+		.aside-enabled.header-fixed[data-kt-sticky-header="on"] & {
+			right: get($aside-config, width, desktop);
+		}	
+	}
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: stretch;
+		height: get($header-config, tablet-and-mobile, default, height);
+
+		// Header Logo
+		.header-logo {
+			// Logos
+			.logo-default {
+				display: inline-block;
+			}
+
+			.logo-sticky {
+				display: none;
+			}
+		}		
+
+		// Fixed header and header sticky modes
+		.header-tablet-and-mobile-fixed[data-kt-sticky-header="on"] & {
+			position: fixed;
+			top: 0;
+			right: 0;
+			left: 0;
+			box-shadow: var(--kt-header-tablet-and-mobile-fixed-box-shadow);
+			background-color: var(--kt-header-tablet-and-mobile-fixed-bg-color);
+			z-index: get($header-config, tablet-and-mobile, fixed, z-index);
+			height: get($header-config, tablet-and-mobile, fixed, height);
+			min-height: get($header-config, tablet-and-mobile, fixed, height);
+
+			// Header Logo
+			.header-logo {
+				// Logos
+				.logo-default {
+					display: none;
+				}
+
+				.logo-sticky {
+					display: inline-block;
+				}
+			}	
+		}		 	
+
+		// Header menu
+		.header-menu {
+			display: none;
+			z-index: get($header-config, tablet-and-mobile, fixed, z-index) - 1;
+		}
+	}
+}

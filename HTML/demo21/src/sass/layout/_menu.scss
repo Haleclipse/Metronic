@@ -1,0 +1,127 @@
+//
+// Menu
+//
+
+.header-menu {
+    .menu {
+        .menu-item {
+            // Customize menu link default state       
+            @include menu-link-default-state( 
+                $title-color: var(--kt-gray-600), 
+                $icon-color: var(--kt-gray-400), 
+                $bullet-color: var(--kt-gray-400), 
+                $arrow-color: var(--kt-gray-400),
+                $bg-color: null, 
+                $all-links: true
+            );
+
+            // Customize menu link hover state       
+            @include menu-link-hover-state( 
+                $title-color: var(--kt-gray-900), 
+                $icon-color: var(--kt-gray-600), 
+                $bullet-color: var(--kt-gray-600), 
+                $arrow-color: var(--kt-gray-600), 
+                $bg-color: null, 
+                $all-links: true
+            );
+
+            // Customize menu link here state       
+            @include menu-link-here-state( 
+                $title-color: var(--kt-gray-900), 
+                $icon-color: var(--kt-gray-600), 
+                $bullet-color: var(--kt-gray-600), 
+                $arrow-color: var(--kt-gray-600), 
+                $bg-color: null, 
+                $all-links: true
+            );
+
+            // Customize menu link show state       
+            @include menu-link-show-state( 
+                $title-color: var(--kt-gray-900), 
+                $icon-color: var(--kt-gray-600), 
+                $bullet-color: var(--kt-gray-600), 
+                $arrow-color: var(--kt-gray-600), 
+                $bg-color: null, 
+                $all-links: true
+            );
+
+            // Customize menu link active state       
+            @include menu-link-active-state( 
+                $title-color: var(--kt-gray-900), 
+                $icon-color: var(--kt-gray-600), 
+                $bullet-color: var(--kt-gray-600), 
+                $arrow-color: var(--kt-gray-600), 
+                $bg-color: var(--kt-gray-200), 
+                $all-links: true
+            );
+        }
+
+        > .menu-item {
+            // Customize menu link here state       
+            @include menu-link-here-state( 
+                $title-color: var(--kt-gray-900), 
+                $icon-color: var(--kt-gray-600), 
+                $bullet-color: var(--kt-gray-600), 
+                $arrow-color: var(--kt-gray-600), 
+                $bg-color: var(--kt-gray-200), 
+                $all-links: false
+            );
+        }        
+    }    
+}
+
+.aside-menu {
+    .menu {
+        .menu-item {
+            // Customize menu link default state       
+            @include menu-link-default-state( 
+                $title-color: var(--kt-gray-600), 
+                $icon-color: var(--kt-gray-400), 
+                $bullet-color: var(--kt-gray-400), 
+                $arrow-color: var(--kt-gray-400), 
+                $bg-color: null, 
+                $all-links: true
+            );
+
+            // Customize menu link hover state       
+            @include menu-link-hover-state( 
+                $title-color: var(--kt-gray-900), 
+                $icon-color: var(--kt-gray-600), 
+                $bullet-color: var(--kt-gray-600), 
+                $arrow-color: var(--kt-gray-600), 
+                $bg-color: null, 
+                $all-links: true
+            );
+
+            // Customize menu link here state       
+            @include menu-link-here-state( 
+                $title-color: var(--kt-gray-900), 
+                $icon-color: var(--kt-gray-600), 
+                $bullet-color: var(--kt-gray-600), 
+                $arrow-color: var(--kt-gray-600), 
+                $bg-color: null, 
+                $all-links: true
+            );
+
+            // Customize menu link show state       
+            @include menu-link-show-state( 
+                $title-color: var(--kt-gray-900), 
+                $icon-color: var(--kt-gray-600), 
+                $bullet-color: var(--kt-gray-600), 
+                $arrow-color: var(--kt-gray-600), 
+                $bg-color: null, 
+                $all-links: true
+            );
+
+            // Customize menu link active state       
+            @include menu-link-active-state( 
+                $title-color: var(--kt-gray-900), 
+                $icon-color: var(--kt-gray-600), 
+                $bullet-color: var(--kt-gray-600), 
+                $arrow-color: var(--kt-gray-600), 
+                $bg-color: var(--kt-gray-200), 
+                $all-links: true
+            );
+        }
+    }
+}

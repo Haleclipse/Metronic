@@ -1,0 +1,48 @@
+//
+// Custom Variables
+//
+
+// Layouts
+$app-bg-color: #FBF6F0;
+$app-bg-color-dark: #151521;
+
+// Header
+$app-header-base-height-mobile: 60px;
+
+// Header sticky
+$app-header-sticky-bg-color: $body-bg;
+$app-header-sticky-bg-color-dark: $body-bg-dark;
+$app-header-sticky-bg-color-mobile: $body-bg;
+$app-header-sticky-bg-color-mobile-dark: $body-bg-dark;
+
+
+// Header primary
+$app-header-primary-base-height: 77px;
+$app-header-primary-base-bg-color: $primary;
+$app-header-primary-base-bg-color-dark: $primary;
+$app-header-primary-base-bg-color-mobile: $primary;
+$app-header-primary-base-bg-color-mobile-dark: $primary;
+
+// Header secondary
+$app-header-secondary-base-height: 100px;
+$app-header-secondary-base-bg-color: $body-bg;
+$app-header-secondary-base-bg-color-dark: $body-bg-dark;
+$app-header-secondary-base-bg-color-mobile: $body-bg;
+$app-header-secondary-base-bg-color-mobile-dark: $body-bg-dark;
+$app-header-secondary-sticky-box-shadow: 0px 10px 30px 0px rgba(82,63,105,0.05);
+$app-header-secondary-sticky-box-shadow-dark: none;
+
+// Header secondary sticky
+$app-header-secondary-sticky-bg-color: $body-bg;
+$app-header-secondary-sticky-bg-color-dark: $body-bg-dark;
+
+// Sidebar
+$app-sidebar-base-width: 250px;
+$app-sidebar-base-width-mobile: 250px; 
+$app-sidebar-base-gap-end: 30px;
+$app-sidebar-base-gap-top: 30px;
+$app-sidebar-base-gap-bottom: 30px;
+
+$app-sidebar-sticky-gap-end: 30px;
+$app-sidebar-sticky-gap-top: 30px;
+$app-sidebar-sticky-gap-bottom: 30px;

@@ -1,0 +1,26 @@
+//
+// Topbar
+//
+
+.topbar {
+    .topbar-item {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        i,
+        .svg-icon {
+            color: #6E6C85;
+        }
+    }
+
+    // Active, hover and show states
+    .show > .topbar-item,
+    .topbar-item:hover,
+    .topbar-item.show {
+        i,
+        .svg-icon {
+            color: $white;
+        }
+    }
+}

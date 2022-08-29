@@ -1,0 +1,47 @@
+//
+// Root
+//
+
+// Light mode
+@include theme-light() {
+    // Page bg
+    --kt-page-bg: #{$page-bg};
+
+    // Header
+    --kt-header-default-bg-color: #{get($header-config, fixed, box-shadow)};
+
+    // Toolbar
+    --kt-toolbar-fixed-bg-color: #{get($toolbar-config, fixed, bg-color)};
+    --kt-toolbar-fixed-box-shadow: #{get($toolbar-config, fixed, box-shadow)};
+    --kt-toolbar-fixed-border-top: #{get($toolbar-config, fixed, border-top)};
+
+    // Aside
+    --kt-aside-scrollbar-color: #{get($aside-config, scrollbar-color)};
+    --kt-aside-scrollbar-hover-color: #{get($aside-config, scrollbar-hover-color)};
+    --kt-aside-box-shadow: #{get($aside-config, box-shadow)};
+
+    // Footer
+    --kt-footer-box-shadow: #{get($footer-config, bg-color)};
+}
+
+// Dark mode
+@include theme-dark() {
+    // Page bg
+    --kt-page-bg: #{$page-bg-dark};
+
+    // Header
+    --kt-header-default-bg-color: #{get($header-config, fixed, box-shadow-dark)};
+
+    // Toolbar
+    --kt-toolbar-fixed-bg-color: #{get($toolbar-config, fixed, bg-color-dark)};
+    --kt-toolbar-fixed-box-shadow: #{get($toolbar-config, fixed, box-shadow-dark)};
+    --kt-toolbar-fixed-border-top: #{get($toolbar-config, fixed, border-top-dark)};
+
+    // Aside
+    --kt-aside-scrollbar-color: #{get($aside-config, scrollbar-color-dark)};
+    --kt-aside-scrollbar-hover-color: #{get($aside-config, scrollbar-hover-color-dark)};
+    --kt-aside-box-shadow: #{get($aside-config, box-shadow-dark)};
+
+    // Footer
+    --kt-footer-box-shadow: #{get($footer-config, bg-color-dark)};
+}

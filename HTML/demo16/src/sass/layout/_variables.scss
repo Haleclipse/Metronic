@@ -1,0 +1,66 @@
+//
+// Layout Config
+//
+
+// Root font Sizes
+$root-font-size:                                    13px; // Root font size for desktop mode
+$root-font-size-lg:                             	13px; // Root font size for tablet mode
+$root-font-size-md:                             	12px; // Root font size for mobile mode
+
+
+// Page  background Color
+$page-bg:                                         #F3F6F9 !default;
+$page-bg-dark:                                    #151521 !default; 
+
+// Content Spacing
+$content-spacing: (
+	desktop: 30px, // Padding for desktop mode
+	tablet-and-mobile: 15px // Padding for tablet and mobile modes
+) !default;
+
+// Header
+$header-config: (
+	bg-color: #1F1E2E,	 
+	bg-color-dark: #1F1E2E,	 
+	menu-bg-color: #313042,
+	menu-bg-color-dark: lighten(#1F1E2E, 3%),
+	menu-link-color: $gray-400,
+	menu-link-color-dark: $gray-400,
+	menu-link-active-bg-color: #434254,
+	menu-link-active-bg-color-dark: lighten(#1F1E2E, 6%),
+	z-index: 97,                                                  
+	box-shadow: 0px 10px 30px 0px rgba(82,63,105,0.08),
+	box-shadow-dark: none,	
+	sticky-height: 70px,
+	btn-nav-color: #84859A,
+	btn-nav-color-dark: #84859A,
+	btn-nav-icon-color: #84859A,
+	btn-nav-icon-color-dark: #84859A,
+	btn-nav-border-color: #3D3C51,
+	btn-nav-border-color-dark: #313042,
+	btn-nav-border-color-active: #2E2D42,
+	btn-nav-border-color-active-dark: #2E2D42,
+	btn-nav-bg-color-active: #2E2D42,
+	btn-nav-bg-color-active-dark: #2E2D42,
+	btn-create-icon-color: $gray-500,
+	btn-create-icon-color-dark: $gray-700-dark,
+	btn-create-bg-color: #2E2D42,
+	btn-create-bg-color-dark: #2E2D42,
+	btn-create-border-color: #2E2D42,
+	form-control-color: #49485E,
+	form-control-color-dark: #49485E,
+	placeholder-color: $gray-500,
+	placeholder-color-dark: $gray-500,
+	height: (
+		desktop: 180px,
+		tablet-and-mobile: 70px
+	),
+) !default;
+
+// Aside
+$aside-config: (
+	z-index: 101,
+	padding-x: 25px,
+	menu-indention: 0.75rem,
+	width: 265px
+) !default;

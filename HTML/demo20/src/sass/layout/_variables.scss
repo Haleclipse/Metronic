@@ -1,0 +1,61 @@
+//
+// Layout Config
+//
+
+// Root font Sizes
+$root-font-size:                                    13px; // Root font size for desktop mode
+$root-font-size-lg:                             	13px; // Root font size for tablet mode
+$root-font-size-md:                             	12px; // Root font size for mobile mode
+
+// Page  background Color
+$page-bg: 											#F3F6F9 !default;
+$page-bg-dark: 										#151521 !default; 
+
+// Content Spacing
+$content-spacing: (
+	desktop: 30px, // Padding for desktop mode
+	tablet-and-mobile: 15px // Padding for tablet and mobile modes
+) !default;
+
+// Header
+$header-config: (	
+	z-index: 97,
+	bg-color: $primary,
+	bg-color-dark: $page-bg-dark,
+	box-shadow: 0px 10px 30px 0px rgba(82,63,105,0.08),
+	box-shadow-dark: none,
+	 
+	height: (
+		desktop: (
+			default: 70px,
+			extended: 140px			 
+		),
+		tablet-and-mobile: 55px
+	),	
+	navs-bg-color: $body-bg,
+	navs-bg-color-dark: $body-bg-dark,
+	navs-tab-height: 50px,
+	navs-tab-color: (
+		default:#C8E3FF,
+		default-dark: $gray-600-dark,
+		hover: $gray-900,
+		hover-dark: $gray-900-dark,
+		active: $gray-900,
+		active-dark: $gray-900-dark
+	),
+	menu: (
+		padding-x: 25px,
+		indention: 0.75rem,
+	)
+) !default;
+
+// Aside
+$aside-config: (
+	z-index: 101,
+	padding-x: 25px,
+	menu-indention: 0.75rem,
+	width: 265px
+) !default;
+	
+	 
+	 

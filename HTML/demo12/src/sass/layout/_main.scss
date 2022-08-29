@@ -1,0 +1,84 @@
+//
+// Main
+//
+
+// Body
+body {
+	background-color: var(--kt-page-bg);
+
+	&.page-bg {		
+		background-repeat: no-repeat;
+		background-position: center;
+		background-attachment: fixed;
+		background-size: cover;
+	}
+
+	[data-theme="dark"] & {
+		background-image: none !important;
+	}
+}
+
+// Font color from Content background color
+.text-page-bg {
+	color: $page-bg;
+}
+
+// Button 
+.btn-nav {
+	@include button-custom-variant(
+		$color: $white, 
+		$icon-color: $white, 
+		$border-color: var(--kt-btn-nav-border-color), 
+		$bg-color: var(--kt-btn-nav-bg-color), 
+		$color-active: null, 
+		$icon-color-active: $white, 
+		$border-color-active: $danger, 
+		$bg-color-active: $danger
+	);
+}
+
+// Desktop Mode
+@include media-breakpoint-up(lg) {
+	// Containers
+	.container,
+	.container-xxl,
+	.container-fluid {
+		padding: 0 get($content-spacing, desktop);
+	}
+
+	// Wrapper
+	.wrapper {
+		// Aside enabled mode
+		.aside-enabled & {
+			padding-right: get($aside-config, width, desktop);		 
+		}		
+
+		// Fixed header mode
+		.header-fixed[data-kt-sticky-header="on"] & {
+			padding-top: get($header-config, desktop, default, height);
+		}
+	}
+	
+	// Engage toolbar
+	.aside-enabled .engage-toolbar {
+		right: get($aside-config, width, desktop) !important;
+	}
+
+	// Scrolltop
+	.scrolltop {
+		.aside-enabled & {
+			right: get($aside-config, width, desktop) + 20px;		
+		}		
+	}
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+	// Containers
+	.container,
+	.container-xxl,
+	.container-fluid {
+		max-width: none;
+		padding: 0 get($content-spacing, tablet-and-mobile);
+	}	
+}

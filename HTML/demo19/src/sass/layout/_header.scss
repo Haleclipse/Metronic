@@ -1,0 +1,163 @@
+//
+// Header
+//
+
+// Desktop mode
+@include media-breakpoint-up(lg) {
+	// Header
+	.header {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		flex-direction: column;
+		height: get($header-config, height, desktop);
+		transition: left get($aside-config, transition-speed) ease;
+
+		// Header Logo
+		.header-logo {
+			padding: 0;
+			display: flex;
+			align-items: center;
+		}		
+		
+		// Header menu
+		.header-menu {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+
+			.menu {
+				// Root links
+				& > .menu-item {
+					padding: 0;
+					align-items: stretch;
+					margin-right: 0.5rem !important;
+
+					> .menu-link {
+						height: auto;
+
+						.menu-title {
+							font-weight: $font-weight-bold;
+						}
+
+						.menu-arrow {
+							margin-left: 0.6rem;
+						}
+
+						@include border-top-radius($border-radius);
+						@include border-bottom-radius(0);
+						padding: 1.15rem 1.75rem !important;
+					}
+					 
+					// Customize menu link default state       
+					@include menu-link-default-state( 
+						$title-color: rgba($white, 0.75),
+						$icon-color: rgba($white, 0.5),
+						$bullet-color: rgba($white, 0.5),
+						$arrow-color: rgba($white, 0.5),
+						$bg-color: var(--kt-header-link-bg-color),
+						$all-links: false
+					);
+
+					// Customize menu link hover state       
+					@include menu-link-hover-state ( 
+						$title-color: var(--kt-white),
+						$icon-color: rgba($white, 0.75),
+						$bullet-color: rgba($white, 0.75),
+						$arrow-color: rgba($white, 0.75),
+						$bg-color: var(--kt-header-link-bg-color),
+						$all-links: false
+					);
+
+					// Customize menu link show state       
+					@include menu-link-show-state( 
+						$title-color: var(--kt-white),
+						$icon-color: rgba($white, 0.75),
+						$bullet-color: rgba($white, 0.75),
+						$arrow-color: rgba($white, 0.75),
+						$bg-color: var(--kt-header-link-bg-color),
+						$all-links: false
+					);
+
+					// Customize menu link show state       
+					@include menu-link-here-state( 
+						$title-color: var(--kt-gray-900), 
+						$icon-color: var(--kt-gray-800), 
+						$bullet-color: var(--kt-gray-800), 
+						$arrow-color: var(--kt-gray-800), 
+						$bg-color: var(--kt-toolbar-bg-color), 
+						$all-links: false
+					);
+
+					// Customize menu link active state       
+					@include menu-link-active-state( 
+						$title-color: var(--kt-gray-900), 
+						$icon-color: var(--kt-gray-800), 
+						$bullet-color: var(--kt-gray-800), 
+						$arrow-color: var(--kt-gray-800), 
+						$bg-color: var(--kt-toolbar-bg-color), 
+						$all-links: false
+					);
+				}
+			}
+		}	
+
+		// Fixed header & sticky header modes
+		.header-fixed[data-kt-sticky-header="on"] & {
+			position: fixed;
+			background-size: cover;
+    		background-repeat: no-repeat;
+    		background-image: var(--kt-page-bg-image);
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: get($header-config, z-index);
+			height: get($header-config, sticky-height, desktop);			
+			padding: 0;	
+			
+			// Menu container
+			.header-menu-container {
+				display: none !important;
+			}
+		}
+	}
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+	// Header
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: stretch;
+		height: get($header-config, height, tablet-and-mobile);
+
+		// Menu container
+		.header-menu-container {
+			display: none !important;
+
+		}
+
+		// Fixed header and header sticky modes
+		.header-tablet-and-mobile-fixed[data-kt-sticky-header="on"] & {
+			position: fixed;
+			background-size: cover;
+    		background-repeat: no-repeat;
+    		background-image: $page-bg-image;
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: get($header-config, z-index);
+			height: get($header-config, sticky-height, tablet-and-mobile);
+		}	
+	}		 	
+
+	// Header menu
+	.header-menu {
+		display: none;
+		z-index: get($header-config, z-index) - 1;
+		padding: 0 !important;
+	}
+}

@@ -1,0 +1,24 @@
+//
+// Main
+//
+
+// Body
+body {
+	background-color: var(--kt-page-bg); 
+}
+
+// Font color from Content background color
+.text-page-bg {
+	color: var(--kt-page-bg);
+}
+
+// Desktop mode
+@include media-breakpoint-up(xxl) {
+	.wrapper {
+		// Aside enabled
+		.aside-enabled & {
+			padding-left: 2.5rem;
+			padding-right: 2.5rem;
+		}
+	}		
+}

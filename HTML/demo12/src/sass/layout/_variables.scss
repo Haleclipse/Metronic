@@ -1,0 +1,127 @@
+//
+// Layout Config
+//
+
+// Root font Sizes
+$root-font-size:                                    13px; // Root font size for desktop mode
+$root-font-size-lg:                             	13px; // Root font size for tablet mode
+$root-font-size-md:                             	12px; // Root font size for mobile mode
+
+// Page  background Color
+$page-bg: 											$gray-100 !default;
+$page-bg-dark:										#151521 !default;
+
+// Page background image height
+$page-bg-image-height: (
+	desktop: 350px,
+	tablet-and-mobile: 200px
+) !default;
+
+$page-bg-image-height-lg: (
+	desktop: 530px,
+	tablet-and-mobile: 450px
+) !default;
+
+// Content Spacing
+$content-spacing: (
+	desktop: 30px, // Padding for desktop mode
+	tablet-and-mobile: 15px // Padding for tablet and mobile modes
+) !default;
+
+// Header
+$header-config: (
+	// Desktop Mode
+	desktop: (
+		// Default Mode
+		default: (
+			height: 160px,
+			border: 1px solid rgba($white, 0.1), 
+			border-dark: 1px solid rgba(255, 255, 255, 0.08), 
+		),
+
+		// Fixed Mode
+		fixed: (
+			height: 75px,
+			z-index: 97,
+			bg-color: $body-bg,
+			bg-color-dark: $body-bg-dark,
+			box-shadow: 0px 10px 30px 0px rgba(82,63,105,0.08),
+			box-shadow-dark: none,
+			border: 0
+		)
+	),
+
+	// Tablet & Mobile Modes
+	tablet-and-mobile: (
+		// Default Mode
+		default: (
+			height: 60px,
+			border: 1px solid rgba($white, 0.1), 
+			border-dark: 1px solid rgba(255, 255, 255, 0.08), 
+		),
+
+		// Fixed Mode
+		fixed: (
+			z-index: 97,
+			height: 50px,
+			bg-color: $body-bg,
+			bg-color-dark: $body-bg-dark,
+			box-shadow: 0px 10px 30px 0px rgba(82,63,105,0.08),
+			box-shadow-dark: none,
+			border: 0
+		)
+	)
+) !default;
+
+// Toolbar
+$toolbar-config: (
+	height: (
+		desktop: 75px,
+		tablet-and-mobile: 60px
+	)
+) !default;
+
+// Topbar
+$topbar-config: (
+	btn: (
+		icon-color: $gray-900,
+		icon-color-dark: $gray-900-dark,
+		bg-color: rgba($white, 0.25),
+		bg-color-dark: rgba($white, 0.1),
+		bg-color-active: rgba($white, 0.5),
+		bg-color-active-dark: rgba($white, 0.25),
+	)
+) !default;
+
+// Aside
+$aside-config: (
+	border-radius: 20px,
+	bg-color: #181C32,
+	bg-color-dark: #1e1e2d,
+	width: (
+		desktop: 140px, 
+		tablet-and-mobile: 100px
+	),
+	z-index: 98, // Aside's z-index property
+	box-shadow: 0px 0px 80px 50px rgba(206, 213, 225, 0.12),
+	box-shadow-dark: none,
+	menu-icon: (
+		width:  (
+			desktop: 60px,
+			tablet-and-mobile: 45px
+		),
+
+		border-radius: 50%,
+		bg-color: #21293B,
+		bg-color-dark:  $gray-100-dark,
+		bg-color-active: #000000,
+		bg-color-active-dark: #000000,
+
+		icon-color: $gray-700,
+		icon-color-dark: $gray-700-dark,
+		icon-color-active: $white,
+		icon-color-active-dark: $white,
+		icon-color-hover: $white,
+		icon-color-hover-dark: $white
+	)
+) !default;

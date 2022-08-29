@@ -1,0 +1,51 @@
+//
+// Topbar
+//
+
+ 
+.topbar {		
+	// Buttons
+	.btn.btn-custom {
+		@include button-custom-variant(
+			$color: null, $icon-color: var(--kt-white), $border-color: null, $bg-color: var(--kt-topbar-btn-bg-color), 
+			$color-active: null, $icon-color-active: var(--kt-white), $border-color-active: null, $bg-color-active: var(--kt-topbar-btn-bg-color-active)
+		);
+	}
+	
+	// Fixed header & NON sticky search modes
+	.active.show > .btn.btn-custom {
+		color: var(--kt-white);
+		background-color: var(--kt-topbar-btn-bg-color);
+
+		i,
+		svg-icon {
+			color: var(--kt-white);
+		}
+	}   
+}
+
+// Desktop mode
+@include media-breakpoint-up(lg) {
+	.topbar-search {
+		form {
+			.search-input {
+				@include placeholder(rgba($white, 0.75));
+				background-color: var(--kt-topbar-btn-bg-color);
+				border: 1px solid var(--kt-topbar-btn-bg-color);
+				color: var(--kt-white);
+
+				&:focus {
+					background-color: var(--kt-topbar-btn-bg-color);
+					border: 1px solid var(--kt-topbar-btn-bg-color);
+					color: var(--kt-white);
+				}
+			}
+
+			i,
+			.svg-icon,
+			.spinner-border {
+				color: rgba($white, 0.75) !important;
+			}
+		}
+	}
+}

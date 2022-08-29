@@ -1,0 +1,167 @@
+//
+// Aside extended
+//
+
+// General mode(all devices)
+.aside {
+	display: flex;
+	flex-direction: column;
+	width: get($aside-config, width, desktop);
+	background-color: var(--kt-aside-bg-color);
+	@include border-start-radius(get($aside-config, border-radius));
+
+	// Aside logo
+	.aside-search {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	// Aside menu
+	.aside-menu {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		
+		// Root links
+		.menu {
+			align-items: stretch;
+			justify-content: center;
+
+			> .menu-item {
+				align-items: stretch;
+				justify-content: center;
+
+				> .menu-link {
+					align-items: center;
+					justify-content: center;
+					padding: 0;
+
+					.menu-icon {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						padding: 0;
+						width: get($aside-config, menu-icon, width, desktop);
+						height: get($aside-config, menu-icon, width, desktop);
+						transition: $btn-transition;
+						background-color: transparent;
+						@include border-radius(get($aside-config, menu-icon, border-radius));	
+
+						i,
+						.svg-icon {
+							transition: $btn-transition;
+							color: var(--kt-aside-menu-icon-icon-color);
+						}
+					}
+				}	
+
+				// States
+				&.here > .menu-link,
+				> .menu-link.active {
+					.menu-icon {
+						background-color: var(--kt-aside-menu-icon-bg-color-active);
+
+						i,
+						.svg-icon {
+							transition: $btn-transition;
+							color: var(--kt-aside-menu-icon-icon-color-active);
+						}
+					}
+				}
+
+				// Hover
+				&.show > .menu-link,
+				> .menu-link:hover {
+					.menu-icon {
+						i,
+						.svg-icon {
+							transition: $btn-transition;
+							color: var(--kt-aside-menu-icon-icon-color-active);
+						}
+					}
+				}
+			}	
+		}
+	}	
+
+	// Aside footer
+	.aside-footer {
+		display: flex;
+		align-items: center;
+		justify-content: center;		
+
+		.btn-custom {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0;
+			transition: $btn-transition;
+			@include border-radius(get($aside-config, menu-icon, border-radius));	
+			background-color: var(--kt-aside-menu-icon-bg-color);
+
+			i,
+			.svg-icon {
+				font-size: get($aside-config, menu-icon, icon-color);
+			}
+
+			// Hover & show states
+			&.show,
+			&:hover {
+				i,
+				.svg-icon {
+					font-size: get($aside-config, menu-icon, icon-color-hover);
+				}
+			}		
+		}
+	}
+}
+
+// Desktop mode
+@include media-breakpoint-up(lg) {
+	// Aside
+	.aside {
+		position: fixed;
+		top: 40px;
+		bottom: 40px;
+		right: 0;
+		z-index: get($aside-config, z-index);
+		width: get($aside-config, width, desktop);		
+	}
+
+	// Explore toggle
+	.explore-toggle {
+		.aside-enabled & {
+			left: 0 !important;
+			right: auto !important;
+			transform: rotate(-90deg) !important;
+    		transform-origin: left top !important;
+		}
+	}
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+	// Aside
+	.aside {
+		display: none;
+		width: get($aside-config, width, tablet-and-mobile);	
+
+		// Aside menu
+		.aside-menu {
+			justify-content: flex-start;
+
+			.menu {
+				> .menu-item {
+					> .menu-link {
+						.menu-icon {
+							width: get($aside-config, menu-icon, width, tablet-and-mobile);
+							height: get($aside-config, menu-icon, width, tablet-and-mobile);
+						}
+					}
+				}
+			}
+		}	
+	}
+}

@@ -1,0 +1,40 @@
+//
+// Content
+//
+
+// Content container
+.content {
+	background-color: var(--kt-content-bg);
+	@include border-radius($border-radius);
+}
+
+// Desktop mode
+@include media-breakpoint-up(lg) {
+	.content {
+		padding: get($content-spacing, desktop);
+
+		// Aside enabled
+		.aside-enabled & {			
+			@include border-top-start-radius(0);
+        	@include border-bottom-start-radius(0);
+			border-left: 1px solid var(--kt-border-color);
+		}
+
+		// Header tabs enabled
+		.header-tabs-enabled & {
+			@include border-top-radius(0);
+		}
+
+		// Header menu enabled and tabs disabled
+		.header-menu-enabled:not(.header-tabs-enabled) & {
+			@include border-top-radius(0);
+		}
+	}
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+	.content {
+		padding: get($content-spacing, tablet-and-mobile);
+	}
+}

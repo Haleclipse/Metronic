@@ -1,0 +1,14 @@
+//
+// Topbar
+//
+
+// Base
+.topbar { 
+    // Custom button
+	.btn.btn-custom {
+		@include button-custom-variant(
+			$color: null, $icon-color: null, $border-color: null, $bg-color: transparent, 
+			$color-active: null, $icon-color-active: null, $border-color-active: var(--kt-header-btn-nav-border-color-active), $bg-color-active: var(--kt-header-btn-nav-bg-color-active)
+		);
+	}
+}  
